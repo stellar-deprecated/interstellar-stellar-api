@@ -1,0 +1,22 @@
+{
+  "name": "mcs-stellar-api",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Stellar Development Foundation <stellar@stellar.org>",
+  "license": "Apache-2.0",
+  "keywords": [
+    "mcs", "stellar"
+  ],
+  "dependencies": {
+    "mcs-core": "git+https://github.com/stellar/mcs-core.git#master",
+    "bluebird": "~2.3.4",
+    "lodash": "~2.4.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/stellar/mcs-stellar-api"
+  }
+}
