@@ -1,18 +1,15 @@
-<div>
-    <h2>Register</h2>
-    <div>
-        Username:
-        <input type="text" ng-model="form.username" />
-    </div>
-    <div>
-        Password:
-        <input type="text" ng-model="form.password" />
-    </div>
-    <div>
-        Confirm Password:
-        <input type="text" ng-model="form.confirmPassword" />
-    </div>
-    <div>
-        <button ng-click="form.register()">Register</button>
-    </div>
-</div>
+<form class="mcs-login-form" ng-submit="form.register()">
+  <label class="k-inputGroup">
+    <span class="k-inputGroup__item">Username</span>
+    <input class="k-inputGroup__item" ng-model="form.username" type="text">
+  </label>
+  <label class="k-inputGroup">
+    <span class="k-inputGroup__item">Password</span>
+    <input class="k-inputGroup__item" ng-model="form.password" type="password" autocomplete="off">
+  </label>
+  <label class="k-inputGroup">
+    <span class="k-inputGroup__item">Confirm Password</span>
+    <input class="k-inputGroup__item" ng-model="form.confirmPassword" type="password" autocomplete="off">
+  </label>
+  <button type="submit" class="k-button">Register</button>
+</form>
