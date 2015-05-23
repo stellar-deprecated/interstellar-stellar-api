@@ -1,31 +1,28 @@
 <div ng-controller="mcs-stellar-api.RegistrationFormWidgetController as widget">
-  <h2>Register</h2>
-  <div class="tip">{{ widget.errors.usernameErrors.join('\n') }}</div>
-  <div>
-    Username:
-    <input type="text" ng-model="widget.username" />
-  </div>
-  <div class="tip">{{ widget.errors.passwordErrors.join('\n') }}</div>
-  <div>
-    Password:
-    <input type="password" ng-model="widget.password" />
-  </div>
-  <div>
-    Confirm Password:
-    <input type="password" ng-model="widget.passwordConfirmation" />
-  </div>
+  <label class="k-inputGroup">
+    <div class="tip">{{ widget.errors.usernameErrors.join('\n') }}</div>
+    <span class="k-inputGroup__item">Username</span>
+    <input class="k-inputGroup__item" ng-model="widget.username" type="text">
+  </label>
+  <label class="k-inputGroup">
+    <div class="tip">{{ widget.errors.passwordErrors.join('\n') }}</div>
+    <span class="k-inputGroup__item">Password</span>
+    <input class="k-inputGroup__item" ng-model="widget.password" type="password" autocomplete="off">
+  </label>
+  <label class="k-inputGroup">
+    <span class="k-inputGroup__item">Confirm Password</span>
+    <input class="k-inputGroup__item" ng-model="widget.confirmPassword" type="password" autocomplete="off">
+  </label>
   <div class="tip">{{ widget.errors.captchaErrors.join('\n') }}</div>
-  <div>
+  <label>
     Captcha:
     <div
-      vc-recaptcha
-      key="widget.recaptchaKey"
-      theme="'light'"
-      on-create="widget.setRecaptchaWidgetId(widgetId)"
-      on-success="widget.onRecaptchaSuccess(response)"
-      ></div>
-  </div>
-  <div>
-    <button ng-click="widget.register()">Register</button>
-  </div>
+        vc-recaptcha
+        key="widget.recaptchaKey"
+        theme="'light'"
+        on-create="widget.setRecaptchaWidgetId(widgetId)"
+        on-success="widget.onRecaptchaSuccess(response)"
+        ></div>
+  </label>
+  <button class="k-button" ng-click="widget.register()">Register</button>
 </div>
