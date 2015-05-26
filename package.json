@@ -10,7 +10,6 @@
   ],
   "dependencies": {
     "angular-recaptcha": "git+https://github.com/VividCortex/angular-recaptcha.git#2.2.3",
-    "bluebird": "~2.3.4",
     "lodash": "~2.4.1",
     "mcs-core": "git+https://github.com/stellar/mcs-core.git#master",
     "stellar-wallet-js-sdk": "git+https://git@github.com/stellar/stellar-wallet-js-sdk.git#master",
