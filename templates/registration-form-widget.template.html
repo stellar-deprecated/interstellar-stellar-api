@@ -1,17 +1,17 @@
 <div ng-controller="interstellar-stellar-api.RegistrationFormWidgetController as widget">
   <label class="k-inputGroup">
     <div class="tip">{{ widget.errors.usernameErrors.join('\n') }}</div>
-    <span class="k-inputGroup__item">Username</span>
-    <input class="k-inputGroup__item" ng-model="widget.username" type="text">
+    <span class="s-inputGroup__item">Username</span>
+    <input class="s-inputGroup__item" ng-model="widget.username" type="text">
   </label>
-  <label class="k-inputGroup">
+  <label class="s-inputGroup">
     <div class="tip">{{ widget.errors.passwordErrors.join('\n') }}</div>
-    <span class="k-inputGroup__item">Password</span>
-    <input class="k-inputGroup__item" ng-model="widget.password" type="password" autocomplete="off">
+    <span class="s-inputGroup__item">Password</span>
+    <input class="s-inputGroup__item" ng-model="widget.password" type="password" autocomplete="off">
   </label>
-  <label class="k-inputGroup">
-    <span class="k-inputGroup__item">Confirm Password</span>
-    <input class="k-inputGroup__item" ng-model="widget.confirmPassword" type="password" autocomplete="off">
+  <label class="s-inputGroup">
+    <span class="s-inputGroup__item">Confirm Password</span>
+    <input class="s-inputGroup__item" ng-model="widget.confirmPassword" type="password" autocomplete="off">
   </label>
   <div class="tip">{{ widget.errors.captchaErrors.join('\n') }}</div>
   <label>
@@ -24,5 +24,5 @@
         on-success="widget.onRecaptchaSuccess(response)"
         ></div>
   </label>
-  <button class="k-button" ng-click="widget.register()">Register</button>
+  <button class="s-button" ng-click="widget.register()">Register</button>
 </div>
