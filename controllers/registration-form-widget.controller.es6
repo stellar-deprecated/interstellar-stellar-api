@@ -1,7 +1,8 @@
-import {Intent} from 'mcs-core';
-import * as StellarWallet from 'stellar-wallet-js-sdk';
-import * as nacl from 'tweetnacl'
+import {Intent, Inject} from 'interstellar-core';
+import StellarWallet from 'stellar-wallet-js-sdk';
+import nacl from 'tweetnacl'
 
+@Inject("$q", "$http", "$scope", "interstellar-sessions.Sessions", "interstellar-core.IntentBroadcast", "vcRecaptchaService")
 class RegistrationFormWidgetController {
   constructor($q, $http, $scope, Sessions, IntentBroadcast, vcRecaptchaService) {
     this.$q = $q;
@@ -220,8 +221,6 @@ class RegistrationFormWidgetController {
   }
 
 }
-
-RegistrationFormWidgetController.$inject = ["$q", "$http", "$scope", "mcs-stellard.Sessions", "mcs-core.IntentBroadcast", "vcRecaptchaService"];
 
 module.exports = function(mod) {
   mod.controller("RegistrationFormWidgetController", RegistrationFormWidgetController);

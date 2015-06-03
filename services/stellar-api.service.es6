@@ -1,6 +1,8 @@
 import * as _ from 'lodash';
-import { NoSession } from '../errors';
+import {Inject} from "interstellar-core";
+import {NoSession} from '../errors';
 
+@Inject("$http", "interstellar-sessions.Sessions", "interstellar-core.Config")
 class StellarApi {
   constructor($http, sessions, config) {
     this.$http     = $http;
@@ -58,8 +60,6 @@ class StellarApi {
     return this.$http.post(this.apiServer + "/user/verifyEmail", data);
   }
 }
-
-StellarApi.$inject = ["$http", "mcs-stellard.Sessions", "mcs-core.Config"];
 
 module.exports = function(mod) {
   mod.service("StellarApi", StellarApi);

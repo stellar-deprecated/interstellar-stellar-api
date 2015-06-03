@@ -2,7 +2,7 @@ let registrationFormWidget = function () {
   return {
     restrict: "E",
     transclude: true,
-    templateUrl: "mcs-stellar-api/registration-form-widget"
+    templateUrl: "interstellar-stellar-api/registration-form-widget"
   }
 };
 

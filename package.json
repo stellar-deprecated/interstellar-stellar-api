@@ -1,17 +1,18 @@
 {
-  "name": "mcs-stellar-api",
-  "version": "0.0.0",
-  "private": false,
+  "name": "interstellar-stellar-api",
+  "version": "0.0.1",
+  "private": true,
   "author": "Stellar Development Foundation <stellar@stellar.org>",
   "license": "Apache-2.0",
   "keywords": [
-    "mcs",
+    "interstellar",
     "stellar"
   ],
   "dependencies": {
     "angular-recaptcha": "git+https://github.com/VividCortex/angular-recaptcha.git#2.2.3",
     "lodash": "~2.4.1",
-    "mcs-core": "git+https://github.com/stellar/mcs-core.git#master",
+    "interstellar-core": "^0.0.1",
+    "interstellar-sessions": "^0.0.1",
     "stellar-wallet-js-sdk": "git+https://git@github.com/stellar/stellar-wallet-js-sdk.git#master",
     "tweetnacl": "^0.11.2"
   },
@@ -20,6 +21,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/stellar/mcs-stellar-api"
+    "url": "https://github.com/stellar/interstellar-stellar-api"
   }
 }
