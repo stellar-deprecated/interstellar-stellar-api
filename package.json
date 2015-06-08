@@ -1,7 +1,6 @@
 {
   "name": "interstellar-stellar-api",
   "version": "0.0.1",
-  "private": true,
   "author": "Stellar Development Foundation <stellar@stellar.org>",
   "license": "Apache-2.0",
   "keywords": [
