@@ -13,4 +13,12 @@ mod.directives  = require.context("./directives", true);
 mod.services    = require.context("./services", true);
 mod.templates   = require.context("raw!./templates", true);
 
+let addConfig = ConfigProvider => {
+  ConfigProvider.addModuleConfig(mod.name, {
+    server: "https://api.stellar.org"
+  });
+};
+addConfig.$inject = ['interstellar-core.ConfigProvider'];
+mod.config(addConfig);
+
 mod.define();

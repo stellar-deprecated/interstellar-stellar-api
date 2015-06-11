@@ -4,10 +4,10 @@ import {NoSession} from '../errors';
 
 @Inject("$http", "interstellar-sessions.Sessions", "interstellar-core.Config")
 class StellarApi {
-  constructor($http, sessions, config) {
+  constructor($http, sessions, Config) {
     this.$http     = $http;
     this.sessions  = sessions;
-    this.apiServer = config.get('apiServer') || 'http://localhost:3001';
+    this.apiServer = Config.get('modules.interstellar-stellar-api.server');
   }
 
   extendWithAuthData(data = {}) {
@@ -58,6 +58,14 @@ class StellarApi {
   userVerifyEmail(data) {
     data = this.extendWithAuthData(data);
     return this.$http.post(this.apiServer + "/user/verifyEmail", data);
+  }
+
+  federation(destination, domain) {
+    return this.$http.get(this.apiServer + "/federation", {params: {destination, domain}});
+  }
+
+  reverseFederation(address, domain) {
+    return this.$http.get(this.apiServer + "/reverseFederation", {params: {address, domain}});
   }
 }
 
