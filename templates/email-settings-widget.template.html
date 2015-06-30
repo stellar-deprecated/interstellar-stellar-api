@@ -1,0 +1,64 @@
+<div ng-controller="interstellar-stellar-api.EmailSettingsWidgetController as widget">
+  <h3>Email</h3>
+
+  <div ng-if="!widget.loaded">
+    Loading...
+  </div>
+
+  <div ng-if="widget.loaded">
+    <div ng-if="widget.error">
+      {{ widget.error }}
+    </div>
+
+    <!-- User hasn't added email yet -->
+    <div class="col-xs-10" ng-show="widget.state == 'none'">
+      <a href="" ng-click="widget.setState('change')">Add your email</a>
+    </div>
+    <!-- Show current email with verified check mark (if verified) -->
+    <div class="col-xs-10" ng-show="widget.state == 'added'">
+      <div>
+        <span class="change-email-control" ng-show='!widget.changingEmail'>{{widget.email}}</span>
+        <span class="verified-email-status icon icon-tick" ng-show="widget.emailVerified"> Verified</span>
+        <a href="" ng-show="!widget.emailVerified" ng-click="widget.setState('verify')">Verify</a>
+      </div>
+      <div class="secondary-action">
+        <a href="" ng-click="widget.setState('change')">Change email</a>
+      </div>
+    </div>
+    <!-- Input layout (for add/change email) -->
+    <div class="col-xs-10" ng-show="widget.state == 'change'">
+      <div class="row">
+        <div class="col-md-5 col-xs-12">
+          <input id="email-input" data-toggle="tooltip" placeholder="Email" type="text" class="form-control" ng-model="widget.newEmail" />
+          <label id="checkbox">
+            <input type="checkbox" name="subscribe" ng-model="widget.subscribe"> Send me important Stellar updates
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-xs-12 col-md-push-1">
+          <button class="btn btn-default stellar-button settings-confirm-button" ng-click="widget.emailAction()">Confirm</button>
+        </div>
+        <div class="settings-cancel-button col-md-1 col-xs-1 col-md-pull-4">
+          <a href="" ng-click="widget.resetState()">Cancel</a>
+        </div>
+      </div>
+    </div>
+    <!-- Input layout (for verify recovery code) -->
+    <div class="col-xs-10" ng-show="widget.state == 'verify'">
+      <div class="row">
+        <div class="col-md-5 col-xs-12">
+          <input id="verify-input" data-toggle="tooltip" placeholder="Code" type="text" class="form-control" ng-model="widget.verifyToken" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-xs-12 col-md-push-1">
+          <button class="btn btn-default stellar-button settings-confirm-button" ng-click="widget.emailAction()">Confirm</button>
+        </div>
+        <div class="settings-cancel-button col-md-1 col-xs-1 col-md-pull-4">
+          <a href="" ng-click="widget.resetState()">Cancel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,7 +9,6 @@ mod.use('vcRecaptcha');
 mod.use(interstellarSessions);
 
 mod.controllers = require.context("./controllers", true);
-mod.directives  = require.context("./directives", true);
 mod.services    = require.context("./services", true);
 mod.templates   = require.context("raw!./templates", true);
 

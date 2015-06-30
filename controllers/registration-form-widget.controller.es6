@@ -1,9 +1,10 @@
-import {Intent, Inject} from 'interstellar-core';
+import {Intent, Inject, Widget} from 'interstellar-core';
 import StellarWallet from 'stellar-wallet-js-sdk';
 import nacl from 'tweetnacl'
 
+@Widget('registrationForm', 'RegistrationFormWidgetController', 'interstellar-stellar-api/registration-form-widget')
 @Inject("$q", "$http", "$scope", "interstellar-sessions.Sessions", "interstellar-core.IntentBroadcast", "vcRecaptchaService")
-class RegistrationFormWidgetController {
+export default class RegistrationFormWidgetController {
   constructor($q, $http, $scope, Sessions, IntentBroadcast, vcRecaptchaService) {
     this.$q = $q;
     this.$http = $http;
@@ -219,9 +220,4 @@ class RegistrationFormWidgetController {
       this.errors.usernameErrors.push('Registration error?');
     }
   }
-
 }
-
-module.exports = function(mod) {
-  mod.controller("RegistrationFormWidgetController", RegistrationFormWidgetController);
-};

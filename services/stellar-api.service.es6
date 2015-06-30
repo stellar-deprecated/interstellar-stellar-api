@@ -1,9 +1,10 @@
 import * as _ from 'lodash';
-import {Inject} from "interstellar-core";
+import {Inject, Service} from "interstellar-core";
 import {NoSession} from '../errors';
 
+@Service('StellarApi')
 @Inject("$http", "interstellar-sessions.Sessions", "interstellar-core.Config")
-class StellarApi {
+export default class StellarApi {
   constructor($http, sessions, Config) {
     this.$http     = $http;
     this.sessions  = sessions;
@@ -15,13 +16,14 @@ class StellarApi {
       throw new NoSession();
     }
 
+    let username = this.sessions.default.username;
     let sessionData = this.sessions.default.getData();
-    let username = sessionData.username;
     let updateToken = sessionData.updateToken;
     return _.extend(data, {username, updateToken});
   }
 
-  userShow(data) {
+  userShow() {
+    let data = this.extendWithAuthData();
     return this.$http.post(this.apiServer + "/users/show", data);
   }
 
@@ -68,7 +70,3 @@ class StellarApi {
     return this.$http.get(this.apiServer + "/reverseFederation", {params: {address, domain}});
   }
 }
-
-module.exports = function(mod) {
-  mod.service("StellarApi", StellarApi);
-};
