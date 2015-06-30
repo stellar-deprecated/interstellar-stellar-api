@@ -1,12 +1,13 @@
-`mcs-stellar-api`
+`interstellar-stellar-api`
 =============
 
-The `mcs-stellar-api` is part of the Modular Client System.
+The `interstellar-stellar-api` is part of the Interstellar Module System.
 
-> Quick start to developing in the MCS ecosystem:
+> Quick start to developing in the Interstellar eco-system:
 >
-> * Install [`mcs-workspace`](https://github.com/stellar/mcs-workspace).
+> * Read [`Getting started`](https://github.com/stellar/interstellar/tree/master/docs) doc.
+> * Install [`interstellar-workspace`](https://github.com/stellar/interstellar-workspace).
 > * Read the technical overview of the system.
 > * Contribute to our open-source modules or develop your own.
 
-The `mcs-stellar-api` module provides widgets that communicate with stellar-api, Stellar.org's private api.
+The `interstellar-stellar-api` module provides helper methods and widgets for Stellar Development Foundation internal APIs.
