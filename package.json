@@ -10,8 +10,8 @@
   "dependencies": {
     "angular-recaptcha": "git+https://github.com/VividCortex/angular-recaptcha.git#2.2.3",
     "lodash": "~2.4.1",
-    "interstellar-core": "^0.0.1",
-    "interstellar-sessions": "^0.0.1",
+    "interstellar-core": "~0.0.1",
+    "interstellar-sessions": "~0.0.1",
     "stellar-wallet-js-sdk": "git+https://git@github.com/stellar/stellar-wallet-js-sdk.git#master",
     "tweetnacl": "^0.11.2"
   },
